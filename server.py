@@ -67,6 +67,7 @@ def run_ocli(args: List[str], timeout: int = 30) -> dict:
 
 @mcp.tool()
 async def manage_profiles(
+    _track("manage_profiles")
     action: str,
     profile_name: Optional[str] = None,
     api_base_url: Optional[str] = None,
@@ -131,6 +132,7 @@ async def manage_profiles(
 
 @mcp.tool()
 async def search_commands(
+    _track("search_commands")
     query: str,
     profile: Optional[str] = None,
     limit: int = 5
@@ -149,6 +151,7 @@ async def search_commands(
 
 @mcp.tool()
 async def get_command_help(
+    _track("get_command_help")
     command: str,
     profile: Optional[str] = None
 ) -> dict:
@@ -165,6 +168,7 @@ async def get_command_help(
 
 @mcp.tool()
 async def execute_command(
+    _track("execute_command")
     command: str,
     profile: Optional[str] = None,
     parameters: Optional[List[str]] = None
@@ -198,6 +202,7 @@ async def execute_command(
 
 @mcp.tool()
 async def list_commands(
+    _track("list_commands")
     profile: Optional[str] = None,
     limit: int = 50
 ) -> dict:
@@ -214,6 +219,7 @@ async def list_commands(
 
 @mcp.tool()
 async def reload_spec(
+    _track("reload_spec")
     profile: Optional[str] = None
 ) -> dict:
     """
